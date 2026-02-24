@@ -1,0 +1,44 @@
+name: Daily Data Refresh
+
+on:
+  schedule:
+    # 08:00 UTC = 3:00 AM ET (EST) / 4:00 AM EDT
+    # All EPL matches finish by ~11pm UK time = ~6pm ET
+    # This runs well before your 9am ET deadline
+    - cron: "0 8 * * *"
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch fresh EPL data
+        run: python3 scripts/fetch_espn_2526.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/processed/
+          if git diff --cached --quiet; then
+            echo "No data changes — skipping commit"
+          else
+            git commit -m "Auto refresh: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
