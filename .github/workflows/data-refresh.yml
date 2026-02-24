@@ -26,7 +26,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests beautifulsoup4 numpy scipy
 
       - name: Fetch fresh EPL data
         run: python3 scripts/fetch_espn_2526.py
