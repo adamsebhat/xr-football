@@ -1,0 +1,31 @@
+{
+  "season": "2025-26",
+  "league": "Premier League",
+  "built_at": "2026-02-23T10:12:07.891460",
+  "match_count": 380,
+  "prediction_count": 380,
+  "teams": [
+    "Arsenal",
+    "Aston Villa",
+    "Bournemouth",
+    "Brentford",
+    "Brighton",
+    "Burnley",
+    "Chelsea",
+    "Crystal Palace",
+    "Everton",
+    "Fulham",
+    "Leeds United",
+    "Liverpool",
+    "Manchester City",
+    "Manchester United",
+    "Newcastle United",
+    "Nottingham Forest",
+    "Sunderland",
+    "Tottenham Hotspur",
+    "West Ham United",
+    "Wolves"
+  ],
+  "team_count": 20,
+  "source": "ESPN API"
+}

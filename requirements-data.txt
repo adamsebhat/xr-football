@@ -1,0 +1,11 @@
+# xR Data Pipeline Dependencies
+# Install via: pip install -r requirements-data.txt
+
+soccerdata>=1.0.0
+scipy>=1.7.0
+numpy>=1.21.0
+pandas>=1.3.0
+requests>=2.26.0
+
+# FBref/Understat requires browser automation
+selenium>=4.0.0

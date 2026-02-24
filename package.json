@@ -1,0 +1,29 @@
+{
+  "name": "xr-football",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "build:data": "python3 scripts/build_fbref_epl_2025_26.py",
+    "build:demo": "python3 scripts/generate_2526_data.py"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "next": "16.1.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
